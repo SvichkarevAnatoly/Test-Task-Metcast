@@ -8,6 +8,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import ru.svichkarev.metcast.gismeteoapi.WeatherGetterTask;
+import ru.svichkarev.metcast.model.WeatherInfo;
+
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends Activity {
 
@@ -19,6 +23,17 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        WeatherGetterTask weatherGetterTask = new WeatherGetterTask();
+        weatherGetterTask.execute();
+        // TODO:
+        try {
+            WeatherInfo weatherInfo = weatherGetterTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         ListView listView = (ListView) findViewById(R.id.list);
 
