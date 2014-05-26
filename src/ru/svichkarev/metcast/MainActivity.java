@@ -1,6 +1,7 @@
 package ru.svichkarev.metcast;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MyActivity extends Activity {
+public class MainActivity extends Activity {
 
     // TODO: для тестирования
     String[] countries = { "Россия", "США", "Великобритания", "Франция", "Китай",
@@ -31,6 +32,10 @@ public class MyActivity extends Activity {
                 Toast.makeText( getApplicationContext(),
                         "You choose " + adapterView.getItemAtPosition(i).toString(),
                         Toast.LENGTH_LONG ).show();
+
+                Intent intent = new Intent( MainActivity.this, DetailedWeatherActivity.class );
+                // TODO: передача параметров
+                startActivity( intent );
             }
         });
     }
