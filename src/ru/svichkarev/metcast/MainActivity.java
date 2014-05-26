@@ -5,13 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import ru.svichkarev.metcast.gismeteoapi.WeatherGetterTask;
-import ru.svichkarev.metcast.model.WeatherInfo;
-
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends Activity {
 
@@ -24,21 +20,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        WeatherGetterTask weatherGetterTask = new WeatherGetterTask();
+        WeatherGetterTask weatherGetterTask = new WeatherGetterTask( this );
         weatherGetterTask.execute();
-        // TODO:
-        try {
-            WeatherInfo weatherInfo = weatherGetterTask.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
 
         ListView listView = (ListView) findViewById(R.id.list);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
-        listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
