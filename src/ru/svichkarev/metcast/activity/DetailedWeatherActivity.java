@@ -1,7 +1,8 @@
-package ru.svichkarev.metcast;
+package ru.svichkarev.metcast.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import ru.svichkarev.metcast.R;
 
 
 public class DetailedWeatherActivity extends Activity {

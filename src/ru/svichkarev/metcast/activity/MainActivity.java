@@ -1,4 +1,4 @@
-package ru.svichkarev.metcast;
+package ru.svichkarev.metcast.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+import ru.svichkarev.metcast.R;
 import ru.svichkarev.metcast.gismeteoapi.WeatherGetterTask;
 
 public class MainActivity extends Activity {

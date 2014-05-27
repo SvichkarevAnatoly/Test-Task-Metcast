@@ -3,7 +3,6 @@ package ru.svichkarev.metcast.gismeteoapi;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -13,6 +12,7 @@ import ru.svichkarev.metcast.R;
 import ru.svichkarev.metcast.model.Forecast;
 import ru.svichkarev.metcast.model.WeatherInfo;
 import ru.svichkarev.metcast.model.parameter.*;
+import ru.svichkarev.metcast.util.ForecastItemAdapter;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -51,14 +51,15 @@ public class WeatherGetterTask extends AsyncTask<Void, Void, WeatherInfo> {
     @Override
     protected void onPostExecute(WeatherInfo weatherInfo) {
         super.onPostExecute(weatherInfo);
-        String weatherStrs[] = new String[4];
+        /*String weatherStrs[] = new String[4];
 
         for( int i = 0; i < 4; i++ ){
             Forecast forecast = weatherInfo.get(i);
             weatherStrs[i] = forecast.getDate();
-        }
+        }*/
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>( listView.getContext(), android.R.layout.simple_list_item_1, weatherStrs);
+        ForecastItemAdapter adapter = new ForecastItemAdapter( listView.getContext(), R.layout.list_item, weatherInfo.getList() );
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>( listView.getContext(), android.R.layout.simple_list_item_1, weatherStrs);
         listView.setAdapter(adapter);
     }
 

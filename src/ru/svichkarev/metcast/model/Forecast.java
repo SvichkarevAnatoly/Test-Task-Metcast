@@ -28,8 +28,15 @@ public class Forecast {
         this.tempHeat = tempHeat;
     }
 
-    // TODO: тестирование
     public String getDate(){
+        return date.toString();
+    }
+
+    public String getTOD(){
         return date.todToString();
+    }
+
+    public String getShortInf(){
+        return temp.getAverageString() + ", " + cloudiness.toString() + ", " + precipitation.toString();
     }
 }
