@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         android:text="ночь"/>
 
-<!--TODO: format string-->
 <TextView
         android:id="@+id/item_short_inf"
         android:layout_width="wrap_content"

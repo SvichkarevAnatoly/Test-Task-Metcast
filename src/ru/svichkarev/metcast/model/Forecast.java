@@ -39,4 +39,21 @@ public class Forecast {
     public String getShortInf(){
         return temp.getAverageString() + ", " + cloudiness.toString() + ", " + precipitation.toString();
     }
+
+    public String getPressure() {
+        return pressure.toString();
+    }
+
+    // TODO: доделать
+    public String getWind() {
+        return wind.getRangeString();
+    }
+
+    public String getRelwet() {
+        return relwet.toString();
+    }
+
+    public String getHeatTemp() {
+        return tempHeat.getRangeString();
+    }
 }

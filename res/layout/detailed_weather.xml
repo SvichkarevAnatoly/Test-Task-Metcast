@@ -5,16 +5,49 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <!--повтор выбранного элемента-->
+    <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00.00.2014"/>
+
+    <TextView
+            android:id="@+id/todTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ночь"/>
+
+    <TextView
+            android:id="@+id/shortInfTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+100, ясно, понятно"/>
+
+    <!--дополнительная информация выбранного элемента-->
+    <!-- TODO: format string-->
     <TextView
             android:id="@+id/pressureTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Давление:"/>
+            android:text="Давление: "/>
 
     <TextView
             android:id="@+id/windTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ветер:"/>
+            android:text="Ветер: "/>
+
+    <TextView
+            android:id="@+id/relwetTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Относительная влажность: "/>
+
+    <TextView
+            android:id="@+id/heatTempTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Комфортная температура: "/>
 
 </LinearLayout>

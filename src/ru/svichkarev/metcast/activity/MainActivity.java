@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import ru.svichkarev.metcast.R;
 import ru.svichkarev.metcast.gismeteoapi.WeatherGetterTask;
+import ru.svichkarev.metcast.model.Forecast;
 
 public class MainActivity extends Activity {
 
@@ -32,13 +33,26 @@ public class MainActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // TODO: для тестирования
+                // выбранный прогноз
+                Forecast choosenForecast = (Forecast)adapterView.getItemAtPosition(i);
+
                 Toast.makeText( getApplicationContext(),
-                        "You choose " + adapterView.getItemAtPosition(i).toString(),
+                        "You choose " + choosenForecast.getTOD(),
                         Toast.LENGTH_LONG ).show();
 
                 Intent intent = new Intent( MainActivity.this, DetailedWeatherActivity.class );
-                // TODO: передача параметров
+
+                // передача выбранного прогноза
+                // TODO: забить в константы
+                intent.putExtra( "DATE", choosenForecast.getDate() );
+                intent.putExtra( "TOD", choosenForecast.getTOD() );
+                intent.putExtra( "SHORT_INF", choosenForecast.getShortInf() );
+
+                intent.putExtra( "PRESSURE", choosenForecast.getPressure() );
+                intent.putExtra( "WIND", choosenForecast.getWind() );
+                intent.putExtra( "RELWET", choosenForecast.getRelwet() );
+                intent.putExtra( "HEAT_TEMP", choosenForecast.getHeatTemp() );
+
                 startActivity( intent );
             }
         });

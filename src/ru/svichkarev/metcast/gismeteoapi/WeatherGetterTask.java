@@ -63,6 +63,7 @@ public class WeatherGetterTask extends AsyncTask<Void, Void, WeatherInfo> {
         listView.setAdapter(adapter);
     }
 
+    // TODO: сделать класс с константами
     private void parseWeather(String queryURL) {
         InputStream inputStream = null;
         try {
@@ -179,17 +180,17 @@ public class WeatherGetterTask extends AsyncTask<Void, Void, WeatherInfo> {
         return temperature;
     }
 
-    // TODO: проверить
     private Wind fillWind(Element element) {
         // TODO: сделать константы статическими
         final String MIN_KEY = "min";
         final String MAX_KEY = "max";
+        final String DIRECTION_KEY = "direction";
 
         int min = Integer.parseInt(element.getAttribute(MIN_KEY));
         int max = Integer.parseInt(element.getAttribute(MAX_KEY));
+        int dir = Integer.parseInt(element.getAttribute(DIRECTION_KEY));
 
-        // TODO: доделать
-        Wind wind = new Wind();
+        Wind wind = new Wind( min, max, dir );
 
         return wind;
     }
