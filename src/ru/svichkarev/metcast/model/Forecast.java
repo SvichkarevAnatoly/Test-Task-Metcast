@@ -41,7 +41,7 @@ public class Forecast {
     }
 
     public String getPressure() {
-        return pressure.toString();
+        return pressure.toString() + " мм ртст";
     }
 
     // TODO: доделать
@@ -50,10 +50,14 @@ public class Forecast {
     }
 
     public String getRelwet() {
-        return relwet.toString();
+        return relwet.toString() + "%";
     }
 
     public String getHeatTemp() {
         return tempHeat.getRangeString();
+    }
+
+    public String  getShortInfFullTemp() {
+        return temp.getRangeString() + ", " + cloudiness.toString() + ", " + precipitation.toString();
     }
 }

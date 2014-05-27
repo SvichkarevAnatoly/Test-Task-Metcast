@@ -46,6 +46,6 @@ public class Wind{
     }
 
     public String  getRangeString(){
-        return dir.toString() + ", " + min + "-" + max + "м/с";
+        return dir.toString() + ", " + min + "-" + max + " м/с";
     }
 }

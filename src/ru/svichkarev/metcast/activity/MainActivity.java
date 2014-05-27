@@ -19,10 +19,6 @@ import ru.svichkarev.metcast.model.Forecast;
 
 public class MainActivity extends Activity {
 
-    // TODO: для тестирования
-    String[] countries = { "Россия", "США", "Великобритания", "Франция", "Китай",
-            "Россия", "США", "Великобритания", "Франция", "Китай"};
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +42,7 @@ public class MainActivity extends Activity {
                 // TODO: забить в константы
                 intent.putExtra( "DATE", choosenForecast.getDate() );
                 intent.putExtra( "TOD", choosenForecast.getTOD() );
-                intent.putExtra( "SHORT_INF", choosenForecast.getShortInf() );
+                intent.putExtra( "SHORT_INF", choosenForecast.getShortInfFullTemp() );
 
                 intent.putExtra( "PRESSURE", choosenForecast.getPressure() );
                 intent.putExtra( "WIND", choosenForecast.getWind() );
