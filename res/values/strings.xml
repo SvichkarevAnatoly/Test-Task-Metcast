@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">Metcast for Novosibirsk www.gismeteo.ru</string>
     <string name="update_btn_label">Update</string>
+
+    <string name="no_connection_title">No Internet Connection</string>
+    <string name="no_connection_message">You need Internet connection to use this App. Please, establish connection and try again.</string>
+    <string name="ok">Ok</string>
 </resources>
